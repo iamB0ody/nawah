@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header.main {
+  width: 100%;
+  height: 20vh;
+  background-image: url(./assets/header.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+#title {
+  width: 100%;
+  height: 10vh;
+  background-image: url(./assets/title.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+footer.main {
+  width: 100%;
+  height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer.main .left {
+  width: 50%;
+  height: 100%;
+  background-image: url(./assets/footer-left.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
+}
+
+footer.main .right {
+  width: 50%;
+  height: 100%;
+  background-image: url(./assets/footer-right.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+
+form {
+  /* background-color: #d95d27; */
+  width: 75%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  position: relative; /* Required for positioning the pseudo-element */
+  padding: 40px; /* Inner padding to create space inside the border */
+  background-color: white; /* Background color inside the box */
+  border-radius: 50px; /* Rounded corners */
+  z-index: 1; /* Positioning context for the content */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow: hidden; /* Hide overflow to clip the pseudo-element */
+}
+
+form::before {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute; /* Position it relative to the parent */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 40px; /* Same rounded corners */
+  padding: 20px; /* Border width */
+  background: linear-gradient(to bottom, #3781c3, transparent); /* Gradient effect */
+  z-index: -1; /* Behind the main content */
+}
+
+form .form-header {
+  width: 100%;
+  height: 5vh;
+  background-image: url(./assets/form-header.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+form div {
+  /* width: 89%; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+form .input {
+  background-color: #d95d27;
+  padding: 15px 25px;
+  padding-bottom: 30px;
+}
+
+form .input:first-child {
+  border-radius: 20px 20px 0 0;
+  padding-top: 100px;
+}
+
+form .input:last-child {
+  border-radius: 0 0 20px 20px;
+  padding-bottom: 100px;
+}
+
+form .input label {
+  color: white;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+form .input input {
+  border: 0;
+  font-size: 35px;
+  padding-left: 10px;
+  width: 100%;
+  outline: none;
+  height: 3vh;
+  border-radius: 50px;
+}
+
+form .form-footer {
+  width: 100%;
+  height: 3vh;
+  background-image: url(./assets/form-footer.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+}
