@@ -1,4 +1,7 @@
 document.getElementById("submit").addEventListener("click", function () {
+  const submitButton = document.getElementById("submit")
+  submitButton.disabled = true // Disable the submit button
+
   const fullName = document.getElementById("fullName").value.trim()
   const companyName = document.getElementById("companyName").value.trim()
   const title = document.getElementById("title").value.trim()
@@ -8,22 +11,27 @@ document.getElementById("submit").addEventListener("click", function () {
   // Validate all fields
   if (!fullName) {
     showCustomAlert("Full Name is required.")
+    submitButton.disabled = false // Re-enable the submit button
     return
   }
   if (!companyName) {
     showCustomAlert("Company Name is required.")
+    submitButton.disabled = false // Re-enable the submit button
     return
   }
   if (!title) {
     showCustomAlert("Title is required.")
+    submitButton.disabled = false // Re-enable the submit button
     return
   }
   if (!email) {
     showCustomAlert("Email is required.")
+    submitButton.disabled = false // Re-enable the submit button
     return
   }
   if (!mobile) {
     showCustomAlert("Mobile Number is required.")
+    submitButton.disabled = false // Re-enable the submit button
     return
   }
 
@@ -31,6 +39,7 @@ document.getElementById("submit").addEventListener("click", function () {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(email)) {
     showCustomAlert("Please enter a valid email.")
+    submitButton.disabled = false // Re-enable the submit button
     return
   }
 
@@ -38,6 +47,7 @@ document.getElementById("submit").addEventListener("click", function () {
   const mobileRegex = /^\+?\d{10,14}$/ // Adjust the regex based on your country code requirements
   if (!mobileRegex.test(mobile)) {
     showCustomAlert("Please enter a valid mobile number.")
+    submitButton.disabled = false // Re-enable the submit button
     return
   }
 
@@ -70,10 +80,12 @@ document.getElementById("submit").addEventListener("click", function () {
       } else {
         showCustomAlert("Failed to submit the form.")
       }
+      submitButton.disabled = false // Re-enable the submit button after submission
     })
     .catch((error) => {
       console.error("Error:", error)
       showCustomAlert("Error submitting the form.")
+      submitButton.disabled = false // Re-enable the submit button after submission
     })
 })
 
