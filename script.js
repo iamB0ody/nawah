@@ -50,15 +50,19 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     mobile,
   }
 
-  // Replace 'YOUR_SCRIPT_URL' with your Google Apps Script URL
+  // Create a FormData object
+  const formData = new FormData()
+  formData.append("fullName", "John Doe 18")
+  formData.append("companyName", "Company 16")
+  formData.append("title", "Title 11")
+  formData.append("email", "test856@example.com")
+  formData.append("mobile", "+15465324103")
+
   const scriptURL = "https://script.google.com/macros/s/AKfycbzbX7stivYZE1ehdbi6Akz7WC_7RABHVia80xkidjsRkZiaF7eohkvAN7E04dXYbYUnnw/exec"
   fetch(scriptURL, {
     method: "POST",
     mode: "cors", // Ensure CORS is handled
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json",
-    },
+    body: formData, // Send FormData instead of JSON
   })
     .then((response) => {
       if (response.ok) {
