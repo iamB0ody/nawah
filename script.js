@@ -51,9 +51,10 @@ document.getElementById("submitBtn").addEventListener("click", function () {
   }
 
   // Replace 'YOUR_SCRIPT_URL' with your Google Apps Script URL
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzOsvnwuQvoD6_W5FD2v3g0setI62g5JhKvZ4cLuJayAy7RSDSLfLV6OtjiOKKkSeQybQ/exec"
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzbX7stivYZE1ehdbi6Akz7WC_7RABHVia80xkidjsRkZiaF7eohkvAN7E04dXYbYUnnw/exec"
   fetch(scriptURL, {
     method: "POST",
+    mode: "cors", // Ensure CORS is handled
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
