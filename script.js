@@ -51,7 +51,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
   }
 
   // Replace 'YOUR_SCRIPT_URL' with your Google Apps Script URL
-  const scriptURL = "https://script.google.com/macros/s/AKfycbyrf9sCCmc0tX7Qf9trT_ABG3dc0yHaNU_0KpHN14bDO59iqHzZs8Dvm-m3pAzRS-hHlw/exec"
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzOsvnwuQvoD6_W5FD2v3g0setI62g5JhKvZ4cLuJayAy7RSDSLfLV6OtjiOKKkSeQybQ/exec"
   fetch(scriptURL, {
     method: "POST",
     body: JSON.stringify(data),
