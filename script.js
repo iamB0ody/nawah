@@ -1,4 +1,4 @@
-document.getElementById("submitBtn").addEventListener("click", function () {
+document.getElementById("submit").addEventListener("click", function () {
   const fullName = document.getElementById("fullName").value.trim()
   const companyName = document.getElementById("companyName").value.trim()
   const title = document.getElementById("title").value.trim()
@@ -7,37 +7,37 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
   // Validate all fields
   if (!fullName) {
-    alert("Full Name is required.")
+    showCustomAlert("Full Name is required.")
     return
   }
   if (!companyName) {
-    alert("Company Name is required.")
+    showCustomAlert("Company Name is required.")
     return
   }
   if (!title) {
-    alert("Title is required.")
+    showCustomAlert("Title is required.")
     return
   }
   if (!email) {
-    alert("Email is required.")
+    showCustomAlert("Email is required.")
     return
   }
   if (!mobile) {
-    alert("Mobile Number is required.")
+    showCustomAlert("Mobile Number is required.")
     return
   }
 
   // Validate email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(email)) {
-    alert("Please enter a valid email.")
+    showCustomAlert("Please enter a valid email.")
     return
   }
 
   // Validate mobile (US example)
   const mobileRegex = /^\+?\d{10,14}$/ // Adjust the regex based on your country code requirements
   if (!mobileRegex.test(mobile)) {
-    alert("Please enter a valid mobile number.")
+    showCustomAlert("Please enter a valid mobile number.")
     return
   }
 
@@ -52,11 +52,11 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
   // Create a FormData object
   const formData = new FormData()
-  formData.append("fullName", "John Doe 18")
-  formData.append("companyName", "Company 16")
-  formData.append("title", "Title 11")
-  formData.append("email", "test856@example.com")
-  formData.append("mobile", "+15465324103")
+  formData.append("fullName", data.fullName)
+  formData.append("companyName", data.companyName)
+  formData.append("title", data.title)
+  formData.append("email", data.email)
+  formData.append("mobile", data.mobile)
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbwz0H1VprKMoixpsMeUgYnf7V5rOaBuEHQthdNzKcEgFHmC2ywMqW_RUWS1wI463CWJfg/exec"
   fetch(scriptURL, {
@@ -66,13 +66,22 @@ document.getElementById("submitBtn").addEventListener("click", function () {
   })
     .then((response) => {
       if (response.ok) {
-        alert("Form submitted successfully!")
+        showCustomAlert("Form submitted successfully!, Thanks!.")
       } else {
-        alert("Failed to submit the form.")
+        showCustomAlert("Failed to submit the form.")
       }
     })
     .catch((error) => {
       console.error("Error:", error)
-      alert("Error submitting the form.")
+      showCustomAlert("Error submitting the form.")
     })
 })
+
+function showCustomAlert(message) {
+  document.getElementById("alertMessage").textContent = message
+  document.getElementById("customAlert").style.display = "block"
+}
+
+function closeCustomAlert() {
+  document.getElementById("customAlert").style.display = "none"
+}

@@ -8,6 +8,14 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
   </head>
   <body>
+    <!-- Custom Alert Box HTML -->
+    <div id="customAlert" class="custom-alert">
+      <div class="custom-alert-content">
+        <span id="alertMessage"></span>
+        <button onclick="closeCustomAlert()">OK</button>
+      </div>
+    </div>
+
     <header class="main"></header>
     <div class="title"></div>
 
@@ -34,7 +42,7 @@
       </div>
     </form>
 
-    <button id="submitBtn" type="submit"></button>
+    <button id="submit" type="submit"></button>
 
     <footer class="main">
       <div class="left"></div>
