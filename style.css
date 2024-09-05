@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  margin: -1px;
 }
 
 header.main {
@@ -13,7 +14,7 @@ header.main {
   background-size: contain;
 }
 
-#title {
+.title {
   width: 100%;
   height: 10vh;
   background-image: url(./assets/title.png);
@@ -24,7 +25,7 @@ header.main {
 
 footer.main {
   width: 100%;
-  height: 18vh;
+  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,17 +81,7 @@ form::before {
   z-index: -1; /* Behind the main content */
 }
 
-form .form-header {
-  width: 100%;
-  height: 5vh;
-  background-image: url(./assets/form-header.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
 form div {
-  /* width: 89%; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -132,11 +123,19 @@ form .input input {
   border-radius: 50px;
 }
 
-form .form-footer {
-  width: 100%;
-  height: 3vh;
-  background-image: url(./assets/form-footer.png);
+button {
+  position: relative;
+  border: 0;
+  outline: none;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 90px;
+  background-color: transparent;
+
+  background-image: url(./assets/btn.png);
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center center;
   background-size: contain;
 }
