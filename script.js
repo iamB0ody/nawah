@@ -58,7 +58,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
   formData.append("email", "test856@example.com")
   formData.append("mobile", "+15465324103")
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzbX7stivYZE1ehdbi6Akz7WC_7RABHVia80xkidjsRkZiaF7eohkvAN7E04dXYbYUnnw/exec"
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwz0H1VprKMoixpsMeUgYnf7V5rOaBuEHQthdNzKcEgFHmC2ywMqW_RUWS1wI463CWJfg/exec"
   fetch(scriptURL, {
     method: "POST",
     mode: "cors", // Ensure CORS is handled
