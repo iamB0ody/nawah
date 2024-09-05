@@ -140,6 +140,10 @@ button#submit {
   background-size: contain;
 }
 
+button#submit:disabled {
+  opacity: 0.5 !important;
+}
+
 .custom-alert {
   display: none; /* Hidden by default */
   position: fixed;
