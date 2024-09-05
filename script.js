@@ -61,10 +61,9 @@ document.getElementById("submit").addEventListener("click", function () {
   formData.append("email", data.email)
   formData.append("mobile", data.mobile)
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbwz0H1VprKMoixpsMeUgYnf7V5rOaBuEHQthdNzKcEgFHmC2ywMqW_RUWS1wI463CWJfg/exec"
+  const scriptURL = "https://script.google.com/macros/s/AKfycbythkHukQr47rrz9ZnKCzWrQhFZ_u8l0TEJ8wNP5RgR-XXbZCzzrr8PfWliJw6BV8M6qg/exec"
   fetch(scriptURL, {
     method: "POST",
-    mode: "cors", // Ensure CORS is handled
     body: formData, // Send FormData instead of JSON
   })
     .then((response) => {
@@ -104,4 +103,4 @@ function setRandomValues() {
 }
 
 // Set random values on page load for testing
-window.onload = setRandomValues
+// window.onload = setRandomValues
