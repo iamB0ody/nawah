@@ -69,6 +69,7 @@ document.getElementById("submit").addEventListener("click", function () {
   })
     .then((response) => {
       if (response.ok) {
+        clearForm()
         showCustomAlert("Form submitted successfully!, Thanks!.")
       } else {
         showCustomAlert("Failed to submit the form.")
@@ -79,6 +80,15 @@ document.getElementById("submit").addEventListener("click", function () {
       showCustomAlert("Error submitting the form.")
     })
 })
+
+function clearForm() {
+  // Clear all input fields
+  document.getElementById("fullName").value = ""
+  document.getElementById("companyName").value = ""
+  document.getElementById("title").value = ""
+  document.getElementById("email").value = ""
+  document.getElementById("mobile").value = ""
+}
 
 function showCustomAlert(message) {
   document.getElementById("alertMessage").textContent = message
@@ -105,7 +115,7 @@ function setRandomValues() {
   const egyptianPrefixes = ["010", "011", "012", "015"]
   const randomPrefix = egyptianPrefixes[Math.floor(Math.random() * egyptianPrefixes.length)]
   const randomNumber = Math.floor(10000000 + Math.random() * 90000000) // Generate 8 random digits
-  document.getElementById("mobile").value = `+20${randomPrefix}${randomNumber}` // Concatenate with country code +20
+  document.getElementById("mobile").value = `${randomPrefix}${randomNumber}` // Concatenate with country code +20
 }
 
 // Set random values on page load for testing
