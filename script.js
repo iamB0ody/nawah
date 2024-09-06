@@ -37,10 +37,11 @@ document.getElementById("submit").addEventListener("click", function () {
     return
   }
 
-  // Validate mobile (US example)
-  const mobileRegex = /^\+?\d{10,14}$/ // Adjust the regex based on your country code requirements
-  if (!mobileRegex.test(mobile)) {
-    showCustomAlert("Please enter a valid mobile number.")
+  // Validate Egyptian mobile number
+  const egyptianMobileRegex = /^(?:\+20|0020|01)[0125]\d{8}$/ // Adjusted regex for Egyptian numbers
+
+  if (!egyptianMobileRegex.test(mobile)) {
+    showCustomAlert("Please enter a valid Egyptian mobile number.")
     return
   }
 
@@ -99,7 +100,12 @@ function setRandomValues() {
   document.getElementById("companyName").value = `Company ${Math.floor(Math.random() * 100)}`
   document.getElementById("title").value = `Title ${Math.floor(Math.random() * 100)}`
   document.getElementById("email").value = `test${Math.floor(Math.random() * 1000)}@example.com`
-  document.getElementById("mobile").value = `+1${Math.floor(1000000000 + Math.random() * 9000000000)}`
+
+  // Generate a random Egyptian mobile number
+  const egyptianPrefixes = ["010", "011", "012", "015"]
+  const randomPrefix = egyptianPrefixes[Math.floor(Math.random() * egyptianPrefixes.length)]
+  const randomNumber = Math.floor(10000000 + Math.random() * 90000000) // Generate 8 random digits
+  document.getElementById("mobile").value = `+20${randomPrefix}${randomNumber}` // Concatenate with country code +20
 }
 
 // Set random values on page load for testing
