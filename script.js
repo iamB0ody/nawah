@@ -109,4 +109,4 @@ function setRandomValues() {
 }
 
 // Set random values on page load for testing
-window.onload = setRandomValues
+// window.onload = setRandomValues
