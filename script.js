@@ -61,7 +61,7 @@ document.getElementById("submit").addEventListener("click", function () {
   formData.append("email", data.email)
   formData.append("mobile", data.mobile)
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbysC6Yr7LojLJ3OeeCCGOveIJCnY_bwijA1WHY21ikdUhK76zEBaAmbTelvRT4yKus/exec"
+  const scriptURL = "https://script.google.com/macros/s/AKfycbythkHukQr47rrz9ZnKCzWrQhFZ_u8l0TEJ8wNP5RgR-XXbZCzzrr8PfWliJw6BV8M6qg/exec"
   fetch(scriptURL, {
     method: "POST",
     body: formData, // Send FormData instead of JSON
